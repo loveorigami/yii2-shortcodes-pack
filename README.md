@@ -1,7 +1,7 @@
 # Yii2-shortcodes-pack
-[![Latest Stable Version](https://poser.pugx.org/loveorigami/yii2-shortcode-pack/v/stable)](https://packagist.org/packages/loveorigami/yii2-shortcode-pack) 
-[![Total Downloads](https://poser.pugx.org/loveorigami/yii2-shortcode-pack/downloads)](https://packagist.org/packages/loveorigami/yii2-shortcode-pack)
-[![License](https://poser.pugx.org/loveorigami/yii2-shortcode-pack/license)](https://packagist.org/packages/loveorigami/yii2-shortcode-pack)
+[![Latest Stable Version](https://poser.pugx.org/loveorigami/yii2-shortcodes-pack/v/stable)](https://packagist.org/packages/loveorigami/yii2-shortcodes-pack) 
+[![Total Downloads](https://poser.pugx.org/loveorigami/yii2-shortcodes-pack/downloads)](https://packagist.org/packages/loveorigami/yii2-shortcodes-pack)
+[![License](https://poser.pugx.org/loveorigami/yii2-shortcodes-pack/license)](https://packagist.org/packages/loveorigami/yii2-shortcodes-pack)
 
 Yii2-shortcodes-pack is part of the [Yii2-plugins-system](https://github.com/loveorigami/yii2-plugins-system) that have more usefull shortcodes for our site
 

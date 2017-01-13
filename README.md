@@ -23,7 +23,7 @@ Let's start with defining module in `@backend/config/main.php`:
     'plugins' => [
         'class' => 'lo\plugins\Module',
         'pluginsDir'=>[
-            '@lo/plugins/plugins', // default dir with core plugins
+            '@lo/plugins/core', // default dir with core plugins
 			'@lo/shortcodes' // dir with shortcodes pack
             '@common/plugins', // dir with our plugins
         ]

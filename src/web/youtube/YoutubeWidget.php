@@ -27,14 +27,19 @@ class YoutubeWidget extends ShortcodeWidget
     public $h;
 
     /**
+     * @var string
+     */
+    public $controls;
+
+    /**
      * @var string url pattern for video content
      */
-    public $embedPattern = 'https://www.youtube.com/embed/{video_id}';
+    protected $embedPattern = 'https://www.youtube.com/embed/{video_id}';
 
     /**
      * @var array
      */
-    public $playerParameters;
+    protected $playerParameters;
 
     /**
      * @var array
@@ -53,6 +58,10 @@ class YoutubeWidget extends ShortcodeWidget
             'height' => $this->h,
             'frameborder' => 0
         ];
+
+        if ($this->controls) {
+            $this->playerParameters['controls'] = $this->controls;
+        };
     }
 
     public function run()

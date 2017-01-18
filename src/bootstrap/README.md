@@ -26,7 +26,7 @@ This plugin won't do anything if you don't have theme built with the [Bootstrap]
 * Button Dropdowns
 * Navs
 * Breadcrumbs
-* Labels
+* [Labels](#labels)
 * Badges
 * Jumbotron
 * Page Header
@@ -123,6 +123,20 @@ dismissable | If the alert should be dismissable | optional | true, false | fals
 xclass | Any extra classes you want to add | optional | any text | none
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
+* * *
+
+### Labels
+	[label type="success"] ... [/label]
+
+#### [label] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of label to display | optional | default, primary, success, info, warning, danger | default
+xclass | Any extra classes you want to add | optional | any text | none
+
+[Bootstrap label documentation](http://getbootstrap.com/components/#labels)
+
 * * *
 
 ### JavaScript

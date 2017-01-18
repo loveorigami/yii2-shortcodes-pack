@@ -2,21 +2,23 @@
 namespace lo\shortcodes\bootstrap\widgets;
 
 /**
- * Class Row
+ * Class Container
  * @package lo\shortcodes\bootstrap\widgets
  * @author Lukyanov Andrey <loveorigami@mail.ru>
  */
-class Row extends BootstrapWidget
+class Container extends BootstrapWidget
 {
+    /** @var bool */
+    public $fluid;
+
     /**
      * init widget
      */
     public function init()
     {
-        parent::init();
-
         $this->options = [
-            'class' => 'row'
+            'class' => $this->fluid ? 'container-fluid' : 'container'
         ];
+        parent::init();
     }
 }

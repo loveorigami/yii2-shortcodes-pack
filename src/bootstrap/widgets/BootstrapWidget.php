@@ -1,6 +1,7 @@
 <?php
 namespace lo\shortcodes\bootstrap\widgets;
 
+use yii\bootstrap\Html;
 use yii\bootstrap\Widget;
 
 /**
@@ -40,6 +41,11 @@ class BootstrapWidget extends Widget
     const SIZE_LARGE = 'lg';
 
     /**
+     * @var string
+     */
+    public $id;
+
+    /**
      * Content inner shorcode
      * ```
      * [code]...content here...[\code]
@@ -64,5 +70,31 @@ class BootstrapWidget extends Widget
         if (property_exists($this, $name)) {
             $this->$name = $string;
         }
+    }
+
+    /**
+     * init
+     */
+    public function init()
+    {
+        $this->options['id'] = $this->id;
+        $this->addXClass();
+    }
+
+    /**
+     * Render row
+     * @return string
+     */
+    public function run()
+    {
+        return Html::tag('div', $this->content, $this->options);
+    }
+
+    /**
+     * add extra class in options
+     */
+    protected function addXClass()
+    {
+        $this->xclass ? Html::addCssClass($this->options, $this->xclass) : null;
     }
 }

@@ -10,8 +10,6 @@ use yii\bootstrap\Html;
  */
 class Col extends BootstrapWidget
 {
-    public $id;
-    
     /** @var string column width */
     public $lg = false;
     public $md = 12;
@@ -41,18 +39,8 @@ class Col extends BootstrapWidget
      */
     public function init()
     {
-        parent::init();
-        $this->options['id'] = $this->id;
         $this->getCssClass();
-    }
-
-    /**
-     * Render row
-     * @return string
-     */
-    public function run()
-    {
-        return Html::tag('div', $this->content, $this->options);
+        parent::init();
     }
 
     /**

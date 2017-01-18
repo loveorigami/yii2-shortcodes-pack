@@ -3,12 +3,13 @@ namespace lo\shortcodes\bootstrap;
 
 use lo\plugins\BaseShortcode;
 use lo\shortcodes\bootstrap\widgets\Col;
+use lo\shortcodes\bootstrap\widgets\Container;
 use lo\shortcodes\bootstrap\widgets\Row;
 
 /**
  * Plugin Name: Bootstrap Css Shortcodes
  * Plugin URI: https://github.com/loveorigami/yii2-shortcodes-pack/tree/master/src/bootstrap
- * Version: 1.0
+ * Version: 1.2
  * Description: A shortcodes pack with Bootstrap 3 css elements
  * Author: Andrey Lukyanov
  * Author URI: https://github.com/loveorigami
@@ -22,6 +23,14 @@ class BootstrapCssShortcodes extends BaseShortcode
     {
         return [
             // Grid system
+            'container' => [
+                'callback' => [Container::class, 'widget'],
+                'config' => [
+                    'xlass' => false,
+                    'fluid' => false
+                ],
+                'tooltip' => '[container] ... [/container]'
+            ],
             'row' => [
                 'callback' => [Row::class, 'widget'],
                 'config' => [

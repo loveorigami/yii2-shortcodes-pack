@@ -31,7 +31,7 @@ This plugin won't do anything if you don't have theme built with the [Bootstrap]
 * Jumbotron
 * Page Header
 * Thumbnails
-* Alerts
+* [Alerts](#alerts)
 * Progress Bars
 * Media Objects
 * List Groups
@@ -112,6 +112,17 @@ xclass | Any extra classes you want to add | optional | any text | none
 
 ### Components
 
+### Alerts
+	[alert type="success"] ... [/alert]
+
+#### [alert] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the alert | required | success, info, warning, danger | success
+dismissable | If the alert should be dismissable | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+
+[Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
 * * *
 
 ### JavaScript

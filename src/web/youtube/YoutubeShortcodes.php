@@ -37,7 +37,7 @@ class YoutubeShortcodes extends BaseShortcode
                     'h' => 315,
                     'controls' => 2
                 ],
-                'tooltip' => '[youtube code="*" w="*" h="*"]'
+                'tooltip' => '[youtube code=* w=* h=*]'
             ]
         ];
     }

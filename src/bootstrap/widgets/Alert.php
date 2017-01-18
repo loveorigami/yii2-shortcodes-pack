@@ -22,6 +22,9 @@ class Alert extends BootstrapWidget
      */
     public $dismissable;
 
+    /**
+     * init type
+     */
     public function init()
     {
         $this->getCssClass();
@@ -29,7 +32,7 @@ class Alert extends BootstrapWidget
     }
 
     /**
-     * adding an optional .alert-dismissible
+     * @return string
      */
     public function run()
     {

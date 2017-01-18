@@ -20,7 +20,7 @@ class Alert extends BootstrapWidget
      * Build on any alert by adding an optional .alert-dismissible and close button.
      * @var string
      */
-    public $dismissable;
+    public $close;
 
     /**
      * init type
@@ -39,7 +39,7 @@ class Alert extends BootstrapWidget
         return BootstrapAlert::widget([
             'options' => $this->options,
             'body' => $this->content,
-            'closeButton' => $this->dismissable ? [] : false
+            'closeButton' => $this->close ? [] : false
         ]);
     }
 

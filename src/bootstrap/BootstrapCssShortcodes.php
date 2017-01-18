@@ -7,7 +7,7 @@ use lo\shortcodes\bootstrap\widgets\Container;
 use lo\shortcodes\bootstrap\widgets\Row;
 
 /**
- * Plugin Name: Bootstrap Css Shortcodes
+ * Plugin Name: Bootstrap 3 Css Shortcodes
  * Plugin URI: https://github.com/loveorigami/yii2-shortcodes-pack/tree/master/src/bootstrap
  * Version: 1.2
  * Description: A shortcodes pack with Bootstrap 3 css elements

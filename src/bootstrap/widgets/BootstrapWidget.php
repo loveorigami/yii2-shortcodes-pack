@@ -61,6 +61,11 @@ class BootstrapWidget extends Widget
     public $xclass;
 
     /**
+     * @var string
+     */
+    protected $tag = 'div';
+
+    /**
      * Need for ignore exceptions
      * @param string $name
      * @param mixed $string
@@ -87,7 +92,7 @@ class BootstrapWidget extends Widget
      */
     public function run()
     {
-        return Html::tag('div', $this->content, $this->options);
+        return Html::tag($this->tag, $this->content, $this->options);
     }
 
     /**

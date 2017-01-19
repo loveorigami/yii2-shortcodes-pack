@@ -48,7 +48,7 @@ Let's start with defining module in `@backend/config/main.php`:
         'pluginsDir'=>[
             '@lo/plugins/core', // default dir with core plugins
 			'@lo/shortcodes' // dir with shortcodes pack
-            '@common/plugins', // dir with our plugins
+            '@common/shortcodes', // dir with our plugins with shortcodes
         ]
     ],
 ],

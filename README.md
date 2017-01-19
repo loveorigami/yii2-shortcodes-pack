@@ -5,6 +5,8 @@
 
 Yii2-shortcodes-pack is part of the [Yii2-plugins-system](https://github.com/loveorigami/yii2-plugins-system) that have more usefull shortcodes for our site
 
+!["Shortcodes"](docs/img/shortcodes.jpg)
+
 ## 1. Download
 
 Yii2-shortcodes-pack be installed using composer. Run following command to download and
@@ -14,7 +16,7 @@ install Yii2-shortcodes-pack:
 composer require "loveorigami/yii2-shortcodes-pack": "*"
 ```
 
-### 3. Configure application
+## 2. Configure application
 
 Let's start with defining module in `@backend/config/main.php`:
 
@@ -35,12 +37,18 @@ That's all, now you have module installed and configured in advanced template.
 Next, open `@frontend/config/main.php` and add following:
 
 ```php
-'bootstrap' => ['log', 'plugins'],
 ...
 'components' => [
     'plugins' => [
         'class' => lo\plugins\components\EventBootstrap::class,
-        'appId' => 1 // lo\plugins\BasePlugin::APP_FRONTEND
+        'appId' => 1 // lo\plugins\BasePlugin::APP_FRONTEND,
+        // by default
+        'enablePlugins' => true,
+        'shortcodesParse' => true,
+        'shortcodesIgnoreBlocks' => [
+            '<pre[^>]*>' => '<\/pre>',
+            //'<div class="content[^>]*>' => '<\/div>',
+        ]
     ],
     'view' => [
         'class' => lo\plugins\components\View::class,
@@ -52,7 +60,6 @@ Next, open `@frontend/config/main.php` and add following:
 Also do the same thing with `@backend/config/main.php`:
 
 ```php
-'bootstrap' => ['log', 'plugins'],
 ...
 'components' => [
     'plugins' => [

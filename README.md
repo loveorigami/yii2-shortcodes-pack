@@ -37,7 +37,14 @@ install Yii2-shortcodes-pack:
 composer require "loveorigami/yii2-shortcodes-pack": "*"
 ```
 
-## 2. Configure application
+## 2. Update database schema
+
+The last thing you need to do is updating your database schema by applying the migrations. Make sure that you have properly configured db application component and run the following command:
+```
+$ php yii migrate/up --migrationPath=@vendor/loveorigami/yii2-plugins-system/migrations
+```
+
+## 3. Configure application
 
 Let's start with defining module in `@backend/config/main.php`:
 

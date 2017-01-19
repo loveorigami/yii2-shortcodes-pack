@@ -22,6 +22,10 @@ tabs	      | Bootstrap 3 tabs or pills | [tabs] [tab] ... [/tab] [/tabs]        
 
 and more in future releases...
 
+### How create my shortcode?
+
+* It is very easy! [See instruction](docs/create_shortcode.md)
+
 * * *
 
 ## 1. Download

@@ -7,6 +7,23 @@ Yii2-shortcodes-pack is part of the [Yii2-plugins-system](https://github.com/lov
 
 !["Shortcodes"](docs/img/shortcodes.jpg)
 
+## 0. Shortcodes in pack
+Shortcode     | Usage                                 | Code 
+------------- | ------------------------------------- | -------- 
+yt	          | [yt code="*"] Link on video [/yt]     | [see](src/web/youtube)
+youtube	      | [youtube code="*" w="*" h="*"]        | [see](src/web/youtube)
+code	      | [code style="*" lang="*"] ... [/code] |	[see](src/content/codehighlight)
+container     |	[container] ... [/container]	      | [see](src/bootstrap)
+row	          | [row] ... [/row]	                  | [see](src/bootstrap)
+col	          | [col md=6] ... [/col]                 | [see](src/bootstrap)
+alert	      | [alert close=1] ... [/alert]          | [see](src/bootstrap)
+label	      | [label text="*"]	                  | [see](src/bootstrap)
+tabs	      | [tabs] [tab] ... [/tab] [/tabs]       | [see](src/bootstrap)
+
+and more in future releases...
+
+* * *
+
 ## 1. Download
 
 Yii2-shortcodes-pack be installed using composer. Run following command to download and
@@ -40,7 +57,7 @@ Next, open `@frontend/config/main.php` and add following:
 ...
 'components' => [
     'plugins' => [
-        'class' => lo\plugins\components\EventBootstrap::class,
+        'class' => lo\plugins\components\PluginsManager::class,
         'appId' => 1 // lo\plugins\BasePlugin::APP_FRONTEND,
         // by default
         'enablePlugins' => true,
@@ -63,7 +80,7 @@ Also do the same thing with `@backend/config/main.php`:
 ...
 'components' => [
     'plugins' => [
-        'class' => lo\plugins\components\EventBootstrap::class,
+        'class' => lo\plugins\components\PluginsManager::class,
         'appId' => 2 // lo\plugins\BasePlugin::APP_BACKEND
     ],
     'view' => [

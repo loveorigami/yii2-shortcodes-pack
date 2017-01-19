@@ -8,17 +8,17 @@ Yii2-shortcodes-pack is part of the [Yii2-plugins-system](https://github.com/lov
 !["Shortcodes"](docs/img/shortcodes.jpg)
 
 ## 0. Shortcodes in pack
-Shortcode     | Usage                                 | Code 
-------------- | ------------------------------------- | -------- 
-yt	          | [yt code="*"] Link on video [/yt]     | [see](src/web/youtube)
-youtube	      | [youtube code="*" w="*" h="*"]        | [see](src/web/youtube)
-code	      | [code style="*" lang="*"] ... [/code] |	[see](src/content/codehighlight)
-container     |	[container] ... [/container]	      | [see](src/bootstrap)
-row	          | [row] ... [/row]	                  | [see](src/bootstrap)
-col	          | [col md=6] ... [/col]                 | [see](src/bootstrap)
-alert	      | [alert close=1] ... [/alert]          | [see](src/bootstrap)
-label	      | [label text="*"]	                  | [see](src/bootstrap)
-tabs	      | [tabs] [tab] ... [/tab] [/tabs]       | [see](src/bootstrap)
+Shortcode     | Description | Usage                                                           | Code 
+------------- | ------------|---------------------------------------------------------------- | -------- 
+yt	          | YouTube link on original video | [yt code="*"] Link on video [/yt]            | [see](src/web/youtube)
+youtube	      | Embed YouTube video with parameters | [youtube code="*" w="*" h="*"]          | [see](src/web/youtube)
+code	      | All the blocks of text enclosed in the shortcode [code], will be highlighted  | [code style="*" lang="*"] ... [/code] |	[see](src/content/codehighlight)
+container     |	Bootstrap 3 grid - container (default or fluid)| [container] ... [/container] | [see](src/bootstrap#grid)
+row	          | Bootstrap 3 grid - row| [row] ... [/row]	                                  | [see](src/bootstrap#grid)
+col	          | Bootstrap 3 grid - column (lg, md, sm, xs) | [col md=6] ... [/col]            | [see](src/bootstrap#grid)
+alert	      | Bootstrap 3 alert messages | [alert close=1] ... [/alert]                     | [see](src/bootstrap#alerts)
+label	      | Bootstrap 3 labels | [label text="*"]	                                      | [see](src/bootstrap#label)
+tabs	      | Bootstrap 3 tabs or pills | [tabs] [tab] ... [/tab] [/tabs]                   | [see](src/bootstrap#tabs)
 
 and more in future releases...
 

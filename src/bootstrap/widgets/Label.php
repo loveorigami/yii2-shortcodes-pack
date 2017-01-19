@@ -16,10 +16,9 @@ class Label extends BootstrapWidget
     public $type;
 
     /**
-     * Build on any alert by adding an optional .alert-dismissible and close button.
      * @var string
      */
-    public $dismissable;
+    public $text;
 
     /**
      * init type
@@ -27,6 +26,9 @@ class Label extends BootstrapWidget
     public function init()
     {
         $this->getCssClass();
+        if ($this->text) {
+            $this->content = $this->text;
+        }
         parent::init();
     }
 

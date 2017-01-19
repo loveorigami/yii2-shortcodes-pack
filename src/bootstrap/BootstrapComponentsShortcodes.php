@@ -8,7 +8,7 @@ use lo\shortcodes\bootstrap\widgets\Label;
 /**
  * Plugin Name: Bootstrap 3 Components Shortcodes
  * Plugin URI: https://github.com/loveorigami/yii2-shortcodes-pack/tree/master/src/bootstrap
- * Version: 1.2
+ * Version: 1.3
  * Description: A shortcodes pack with Bootstrap 3 components
  * Author: Andrey Lukyanov
  * Author URI: https://github.com/loveorigami
@@ -32,9 +32,10 @@ class BootstrapComponentsShortcodes extends BaseShortcode
             'label' => [
                 'callback' => [Label::class, 'widget'],
                 'config' => [
-                    'type' => Label::TYPE_PRIMARY
+                    'type' => Label::TYPE_PRIMARY,
+                    'text' => 'label'
                 ],
-                'tooltip' => '[label] ... [/label]'
+                'tooltip' => '[label text="*"]'
             ],
         ];
     }

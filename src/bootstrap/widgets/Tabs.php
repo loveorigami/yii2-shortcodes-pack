@@ -13,6 +13,12 @@ use yii\helpers\ArrayHelper;
 class Tabs extends BootstrapWidget
 {
     /**
+     * specifies the Bootstrap tab styling.
+     * @var string
+     */
+    public $type;
+
+    /**
      * @var array
      */
     protected $items;
@@ -24,6 +30,7 @@ class Tabs extends BootstrapWidget
     {
         $this->getItemsFromContent();
         return BootstrapTabs::widget([
+            'navType' => 'nav-'.$this->type,
             'items' => $this->items
         ]);
     }
@@ -50,7 +57,7 @@ class Tabs extends BootstrapWidget
 
         $this->items[$index] = [
             'content' => $content,
-            'label' => ArrayHelper::getValue($attr, 'label', $tag.'-'.$index),
+            'label' => ArrayHelper::getValue($attr, 'title', $tag.'-'.$index),
             'active' => ArrayHelper::getValue($attr, 'active') ? true : false
         ];
     }

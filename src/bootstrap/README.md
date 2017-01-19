@@ -39,7 +39,7 @@ This plugin won't do anything if you don't have theme built with the [Bootstrap]
 * Wells
 
 ### JavaScript
-* Tabs
+* [Tabs](#tabs)
 * Tooltip
 * Popover
 * Collapse
@@ -127,6 +127,7 @@ xclass | Any extra classes you want to add | optional | any text | none
 * * *
 
 ### Labels
+	[label type="success" text="..."]
 	[label type="success"] ... [/label]
 
 #### [label] parameters
@@ -140,3 +141,35 @@ xclass | Any extra classes you want to add | optional | any text | none
 * * *
 
 ### JavaScript
+
+### Tabs
+	[tabs type="tabs"]
+		[tab title="Home" active="true"]
+			...
+		[/tab]
+		[tab title="Profile"]
+			...
+		[/tab]
+		[tab title="Messages"]
+			...
+		[/tab]
+	[/tabs]
+
+#### [tabs] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of nav | required | tabs, pills | tabs
+xclass | Any extra classes you want to add | optional | any text | none
+
+#### [tab] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the tab | required | any text | false
+active | Whether this tab should be "active" or selected | optional | true, false | false
+fade | Whether to use the "fade" effect when showing this tab | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+
+[Bootstrap tabs documentation](http://getbootstrap.com/javascript/#tabs)
+
+* * *
+    

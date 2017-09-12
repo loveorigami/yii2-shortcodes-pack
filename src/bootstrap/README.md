@@ -42,7 +42,7 @@ This plugin won't do anything if you don't have theme built with the [Bootstrap]
 * [Tabs](#tabs)
 * Tooltip
 * Popover
-* Collapse
+* [Collapse](#collapse)
 * Carousel
 * Modal
 
@@ -171,5 +171,18 @@ xclass | Any extra classes you want to add | optional | any text | none
 
 [Bootstrap tabs documentation](http://getbootstrap.com/javascript/#tabs)
 
+### Collapse
+	[collapse]
+		[panel title="Home" active="true"]
+			...
+		[/panel]
+		[panel title="Profile"]
+			...
+		[/panel]
+		[panel title="Messages"]
+			...
+		[/panel]
+	[/collapse]
+[Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
+
 * * *
-    

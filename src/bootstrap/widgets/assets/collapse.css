@@ -1,0 +1,82 @@
+/* accordion */
+.sh-accordion a:hover, .sh-accordion a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.sh-accordion.panel-group {
+    margin: 0;
+    border: 0;
+}
+
+.sh-accordion > .panel > .panel-heading + .panel-collapse > .panel-body {
+    border-top: 0;
+    border-bottom: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+}
+
+.sh-accordion .panel {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 6px;
+    border-left: 5px solid #da0404;
+}
+
+.sh-accordion .panel-heading {
+    padding: 0;
+    background-color: #fff;
+}
+
+.sh-accordion .panel-title a {
+    display: block;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px 40px;
+    background: #f5f5f5;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d3d3d3;
+    position: relative;
+}
+
+.sh-accordion .panel-title a.collapse-toggle,
+.sh-accordion .panel-title a.collapse-toggle.collapsed {
+    color: #333;
+    background: #eee;
+    border: 0;
+}
+
+.sh-accordion .panel-title a.collapse-toggle {
+    background: #d3d3d3;
+}
+
+.sh-accordion .panel-title a:before,
+.sh-accordion .panel-title a.collapsed:before {
+    font-family: FontAwesome, serif;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #da0404;
+}
+
+/*
+067 plus
+068 minus
+*/
+
+.sh-accordion .panel-title a.collapse-toggle:before {
+    content: "\f068";
+}
+
+.sh-accordion .panel-title a.collapse-toggle.collapsed:before {
+    content: "\f067";
+}
+
+.sh-accordion .panel-body {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 15px 27px;
+}

@@ -22,6 +22,7 @@ class Collapse extends BootstrapWidget
      */
     public function run()
     {
+        CollapseAsset::register($this->getView());
         $this->getItemsFromContent();
         return BootstrapCollapse::widget([
             'items' => $this->items,

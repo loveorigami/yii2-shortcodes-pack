@@ -1,4 +1,5 @@
 <?php
+
 namespace lo\shortcodes\web\youtube;
 
 use lo\plugins\shortcodes\ShortcodeWidget;
@@ -29,12 +30,17 @@ class YoutubeWidget extends ShortcodeWidget
     /**
      * @var string
      */
+    public $pull = 'right';
+
+    /**
+     * @var string
+     */
     public $controls;
 
     /**
      * @var string url pattern for video content
      */
-    protected $embedPattern = 'https://www.youtube.com/embed/{video_id}';
+    protected $embedPattern = 'https://www.youtube.com/embed/{video_id}?rel=0';
 
     /**
      * @var array
@@ -45,6 +51,11 @@ class YoutubeWidget extends ShortcodeWidget
      * @var array
      */
     protected $iframeOptions;
+
+    /**
+     * @var array
+     */
+    protected $divOptions;
 
     /**
      * @inheritdoc
@@ -62,6 +73,12 @@ class YoutubeWidget extends ShortcodeWidget
         if ($this->controls) {
             $this->playerParameters['controls'] = $this->controls;
         };
+
+        $this->divOptions = [
+            'class' => 'yt img-thumbnail pull-' . $this->pull,
+        ];
+
+        $this->registerCss();
     }
 
     public function run()
@@ -71,6 +88,24 @@ class YoutubeWidget extends ShortcodeWidget
             $url .= '?' . http_build_query($this->playerParameters);
         }
         $options = array_merge(['src' => $url], $this->iframeOptions);
+
+        echo Html::beginTag('div', $this->divOptions);
         echo Html::tag('iframe', '', $options);
+        echo Html::endTag('div');
+    }
+
+    protected function registerCss()
+    {
+        $view = $this->getView();
+        $css = <<<CSS
+.yt.pull-left {
+    margin-right:15px;
+}
+.yt.pull-right {
+    margin-left:15px;
+}
+CSS;
+
+        $view->registerCss($css);
     }
 }

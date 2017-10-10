@@ -35,12 +35,12 @@ class YoutubeWidget extends ShortcodeWidget
     /**
      * @var string
      */
-    public $controls;
+    public $controls = 1;
 
     /**
      * @var string url pattern for video content
      */
-    protected $embedPattern = 'https://www.youtube.com/embed/{video_id}?rel=0';
+    protected $embedPattern = 'https://www.youtube.com/embed/{video_id}';
 
     /**
      * @var array
@@ -67,11 +67,17 @@ class YoutubeWidget extends ShortcodeWidget
         $this->iframeOptions = [
             'width' => $this->w,
             'height' => $this->h,
-            'frameborder' => 0
+            'frameborder' => 0,
+            'allowfullscreen' => true
         ];
 
         if ($this->controls) {
-            $this->playerParameters['controls'] = $this->controls;
+            $this->playerParameters = [
+                'rel' => 0,
+                'modestbranding' => 1,
+                'autohide' => 1,
+                'controls' => $this->controls,
+            ];
         };
 
         $this->divOptions = [

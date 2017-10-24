@@ -12,6 +12,12 @@ use yii\helpers\Html;
  */
 class YoutubeWidget extends ShortcodeWidget
 {
+    const PULL_LEFT = 'left';
+    const PULL_RIGHT = 'right';
+
+    const RATIO_16_9 = '16:9';
+    const RATIO_4_3 = '4:3';
+
     /**
      * @var string
      */
@@ -36,6 +42,11 @@ class YoutubeWidget extends ShortcodeWidget
      * @var string
      */
     public $controls = 1;
+
+    /**
+     * @var string
+     */
+    public $ratio;
 
     /**
      * @var string url pattern for video content
@@ -64,11 +75,14 @@ class YoutubeWidget extends ShortcodeWidget
     {
         parent::init();
 
+        if (!$this->ratio) {
+            $this->ratio = self::RATIO_16_9;
+        }
+
         $this->iframeOptions = [
-            'width' => $this->w,
-            'height' => $this->h,
             'frameborder' => 0,
-            'allowfullscreen' => true
+            'allowfullscreen' => true,
+            'class' => 'embed-responsive-item'
         ];
 
         if ($this->controls) {
@@ -81,7 +95,7 @@ class YoutubeWidget extends ShortcodeWidget
         };
 
         $this->divOptions = [
-            'class' => 'yt img-thumbnail pull-' . $this->pull,
+            'class' => 'embed-responsive embed-responsive-' . $this->cssRetio(),
         ];
 
         $this->registerCss();
@@ -95,23 +109,66 @@ class YoutubeWidget extends ShortcodeWidget
         }
         $options = array_merge(['src' => $url], $this->iframeOptions);
 
+
+        echo Html::beginTag('div', $this->pullOptions());
+
         echo Html::beginTag('div', $this->divOptions);
         echo Html::tag('iframe', '', $options);
         echo Html::endTag('div');
+        echo Html::endTag('div');
+
     }
 
     protected function registerCss()
     {
         $view = $this->getView();
+
         $css = <<<CSS
-.yt.pull-left {
-    margin-right:15px;
-}
-.yt.pull-right {
-    margin-left:15px;
-}
+        .yt.pull-left {
+            margin-right:15px;
+        }
+        .yt.pull-right {
+            margin-left:15px;
+        }
 CSS;
 
         $view->registerCss($css);
+    }
+
+    /**
+     * @return array
+     */
+    protected function pullOptions()
+    {
+        if ($this->w && $this->isPull()) {
+            return [
+                'class' => 'yt img-thumbnail pull-' . $this->pull,
+                'style' => "width:{$this->w}px; heght:{$this->h}px;"
+            ];
+        } else {
+            return [
+                'class' => 'yt text-center',
+            ];
+        }
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isPull()
+    {
+        return in_array($this->pull, [self::PULL_RIGHT, self::PULL_LEFT]);
+    }
+
+    /**
+     * @return string
+     */
+    protected function cssRetio()
+    {
+        if ($this->ratio == self::RATIO_4_3) {
+            return '4by3';
+        } else {
+            return '16by9';
+        }
     }
 }

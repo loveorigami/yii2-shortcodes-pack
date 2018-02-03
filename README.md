@@ -34,7 +34,7 @@ Yii2-shortcodes-pack be installed using composer. Run following command to downl
 install Yii2-shortcodes-pack:
 
 ```bash
-composer require "loveorigami/yii2-shortcodes-pack": "*"
+composer require "loveorigami/yii2-shortcodes-pack":"*"
 ```
 
 ## 2. Update database schema

@@ -1,4 +1,5 @@
 <?php
+
 namespace lo\shortcodes\bootstrap\widgets;
 
 use lo\plugins\helpers\ShortcodesHelper;
@@ -7,13 +8,15 @@ use yii\helpers\ArrayHelper;
 
 /**
  * Class Tabs
+ *
  * @package lo\shortcodes\bootstrap\widgets
- * @author Lukyanov Andrey <loveorigami@mail.ru>
+ * @author  Lukyanov Andrey <loveorigami@mail.ru>
  */
 class Tabs extends BootstrapWidget
 {
     /**
      * specifies the Bootstrap tab styling.
+     *
      * @var string
      */
     public $type;
@@ -21,7 +24,7 @@ class Tabs extends BootstrapWidget
     /**
      * @var array
      */
-    protected $items;
+    protected $items = [];
 
     /**
      * @return string
@@ -29,9 +32,10 @@ class Tabs extends BootstrapWidget
     public function run()
     {
         $this->getItemsFromContent();
+
         return BootstrapTabs::widget([
-            'navType' => 'nav-'.$this->type,
-            'items' => $this->items
+            'navType' => 'nav-' . $this->type,
+            'items' => $this->items,
         ]);
     }
 
@@ -57,8 +61,8 @@ class Tabs extends BootstrapWidget
 
         $this->items[$index] = [
             'content' => $content,
-            'label' => ArrayHelper::getValue($attr, 'title', $tag.'-'.$index),
-            'active' => ArrayHelper::getValue($attr, 'active') ? true : false
+            'label' => ArrayHelper::getValue($attr, 'title', $tag . '-' . $index),
+            'active' => ArrayHelper::getValue($attr, 'active') ? true : false,
         ];
     }
 }

@@ -7,8 +7,9 @@ use yii\helpers\Html;
 
 /**
  * Class YoutubeWidget
+ *
  * @package lo\plugins\shortcodes
- * @author Lukyanov Andrey <loveorigami@mail.ru>
+ * @author  Lukyanov Andrey <loveorigami@mail.ru>
  */
 class YoutubeWidget extends ShortcodeWidget
 {
@@ -82,7 +83,7 @@ class YoutubeWidget extends ShortcodeWidget
         $this->iframeOptions = [
             'frameborder' => 0,
             'allowfullscreen' => true,
-            'class' => 'embed-responsive-item'
+            'class' => 'embed-responsive-item',
         ];
 
         if ($this->controls) {
@@ -97,8 +98,6 @@ class YoutubeWidget extends ShortcodeWidget
         $this->divOptions = [
             'class' => 'embed-responsive embed-responsive-' . $this->cssRetio(),
         ];
-
-        $this->registerCss();
     }
 
     public function run()
@@ -119,31 +118,22 @@ class YoutubeWidget extends ShortcodeWidget
 
     }
 
-    protected function registerCss()
-    {
-        $view = $this->getView();
-
-        $css = <<<CSS
-        .yt.pull-left {
-            margin-right:15px;
-        }
-        .yt.pull-right {
-            margin-left:15px;
-        }
-CSS;
-
-        $view->registerCss($css);
-    }
-
     /**
      * @return array
      */
     protected function pullOptions()
     {
         if ($this->w && $this->isPull()) {
+
+            if ($this->pull === self::PULL_RIGHT) {
+                $pullStyle = 'margin-left:15px;';
+            } else {
+                $pullStyle = 'margin-right:15px;';
+            }
+
             return [
                 'class' => 'yt img-thumbnail pull-' . $this->pull,
-                'style' => "width:{$this->w}px; heght:{$this->h}px;"
+                'style' => "width:{$this->w}px; $pullStyle",
             ];
         } else {
             return [

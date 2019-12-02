@@ -15,7 +15,7 @@ class Collapse extends BootstrapWidget
     /**
      * @var array
      */
-    protected $items;
+    protected $items = [];
 
     /**
      * @return string
